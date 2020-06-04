@@ -25,11 +25,18 @@ document.addEventListener("DOMContentLoaded", function(){
         }) .then(function(json) {
             for ( i in json.message){
             // "in" because this is an object not an array
-                const list = document.createElement("li");
-                list.innerText = i;
-                breedList.appendChild(list);
+                const li = document.createElement("li");
+                li.innerText = i;
+                breedList.appendChild(li);
+                li.addEventListener("click", function() {
+                    li.style.color = "red";
+                })
             }
         })
+    }
+
+    function changeColorClick(){
+        breedList.addEventListener("click",)
     }
     fetchDogs()
     fetchBreeds()
